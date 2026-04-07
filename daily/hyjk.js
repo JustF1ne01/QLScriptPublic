@@ -145,7 +145,7 @@ class Task {
 
     }
 
-    async request(options) {
+    request(options) {
         const finalOptions = {
             timeout: Number(process.env.HYJK_HTTP_TIMEOUT || 15000),
             ...options,

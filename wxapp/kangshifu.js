@@ -30,8 +30,8 @@ const defaultUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X)
 let wxcenter = process.env.wxcenter || ""
 let appid = 'wx54f3e6a00f7973a7'
 class Public {
-    async request(options) {
-        return await axios.request(options);
+    request(options) {
+        return axios.request(options);
     }
 }
 class Task extends Public {

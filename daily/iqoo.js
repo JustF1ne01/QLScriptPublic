@@ -39,7 +39,7 @@ class Task {
         this.threadId = ''
 
     }
-    async request(options) {
+    request(options) {
         let baseHeaders = {
             sign: this.getSign(options.method, options.url.split('https://bbs-api.iqoo.com')[1].split("?")[0], options.data ? options.data : ''),
             'authorization': 'Bearer ' + this.token,
@@ -51,7 +51,7 @@ class Task {
         options.headers = Object.assign(baseHeaders, options.headers)
 
 
-        return await axios.request(options)
+        return axios.request(options)
     }
     async userInfo() {
         let options = {

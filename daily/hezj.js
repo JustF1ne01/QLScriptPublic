@@ -35,7 +35,7 @@ class Task {
         this.token = this.user[0];
 
     }
-    async request(options) {
+    request(options) {
         let baseHeaers = {
             "host": "zj.haier.net",
             "content-type": "application/json",
@@ -54,7 +54,7 @@ class Task {
             "sec-fetch-dest": "empty"
         }
         options.headers = Object.assign(baseHeaers, options.headers)
-        return await axios.request(options)
+        return axios.request(options)
     }
 
     async run() {

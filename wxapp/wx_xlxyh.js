@@ -31,7 +31,7 @@ class Env {
     async httpRequest(config) {
         if (this.isNode()) {
             const axios = require('axios');
-            return await axios(config);
+            return axios(config);
         } else {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();

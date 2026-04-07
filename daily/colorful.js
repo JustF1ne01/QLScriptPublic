@@ -91,7 +91,7 @@ class Task {
 		const crypto = require('crypto');
 		return crypto.createHash('md5').update(str).digest('hex');
 	}
-	async request(options) {
+	request(options) {
 		let appid = "815d8026-9a52-4445-a42c-a5443134232e"
 		let uuid = $.uuid()
 		let timestamp = Date.now()
@@ -110,7 +110,7 @@ class Task {
 
 		}
 		options.headers = Object.assign(baseHeaders, options.headers)
-		return await axios.request(options)
+		return axios.request(options)
 	}
 	async signIn() {
 		let options = {

@@ -51,7 +51,7 @@ class Task {
         )).join("&");
         return crypto.createHash("md5").update(t).digest("hex")
     }
-    async request(options) {
+    request(options) {
         let req_timestamp = Date.now();
         let request_id = Math.random().toString(36).substr(2, 9) + "-" + req_timestamp;
         let baseHeaders = {
@@ -62,7 +62,7 @@ class Task {
             "sign": this.generateMd5Signature({ data: JSON.stringify(options.data), req_timestamp, request_id, }),
         }
         options.headers = { ...baseHeaders, ...options.headers }
-        return await axios.request(options)
+        return axios.request(options)
     }
 
     async userInfo() {
