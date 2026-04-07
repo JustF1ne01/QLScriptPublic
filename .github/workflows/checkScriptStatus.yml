@@ -83,8 +83,8 @@ jobs:
           with open(readme_path, 'r', encoding='utf-8') as f:
               full_text = f.read()
 
-          start_tag = ""
-          end_tag   = ""
+          start_tag = "<!-- README_TABLE_START -->"
+          end_tag   = "<!-- README_TABLE_END -->"
 
           if start_tag not in full_text or end_tag not in full_text:
               print("错误：未找到锚点标记！")
